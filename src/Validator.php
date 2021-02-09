@@ -69,7 +69,8 @@ class Validator{
                         $parameter[]=$vvv_;    
                     }
                 }
-
+print_r($value);
+exit;
                 $juge=true;
                 if(method_exists($vRule,$rule)){
                     $juge=$vRule->{$rule}($value,$parameter);
@@ -106,7 +107,7 @@ class Validator{
         $fields=explode(".",$field);
 
         foreach($fields as $f_){
-            if(empty($value[$f_])){
+            if(!isset($value[$f_])){
                 return null;
             }    
 
