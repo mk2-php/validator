@@ -588,7 +588,7 @@ class ValidateRule{
      */
 	public function isEmail($value,$parameters){
 
-		if(!isset($value)){
+		if($value==""){
 			return true;
 		}
 
