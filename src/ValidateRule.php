@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * 
+ * Mk2 Validator
+ * 
+ * ValidateRule Class
+ * 
+ * Copylight : Nakajima Satoru.
+ * 
+ */
+
 namespace Mk2\Validator;
 
 class ValidateRule{

@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * 
+ * Mk2 Validator
+ * 
+ * Validator Class
+ * 
+ * Copylight : Nakajima Satoru.
+ * 
+ */
+
 namespace Mk2\Validator;
 
 use Mk2\Libraries\Debug;
@@ -99,6 +109,10 @@ class Validator{
         return $response;
     }
 
+    /**
+     * getValue
+     * @param $field
+     */
     public function getValue($field){
 
         $value=$this->_post;
@@ -116,7 +130,12 @@ class Validator{
         return $value;
     }
 
-    private function _convertRule($validate,$post){
+    /**
+     * _convertRule
+     * @param $validate
+     * @param $post
+     */
+    private function _convertRule($validate, $post){
 
         foreach($validate as $name=>$value){
             $names=explode(".",$name);
@@ -242,7 +261,14 @@ class Validator{
         return $this;
     }
 
-    private function _addRule($field,$name,$rule,$message){
+    /**
+     * _addRule
+     * @param $field
+     * @param $name
+     * @param $rule
+     * @param $message
+     */
+    private function _addRule($field, $name, $rule, $message){
 
         if(empty($this->context->rule)){
             $this->context->rule=[];
@@ -294,7 +320,5 @@ class Validator{
         }
 
         return base64_encode($this->{$validateName});
-
     }
-
 }
