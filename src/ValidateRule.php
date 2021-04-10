@@ -745,4 +745,52 @@ class ValidateRule{
 		return false;
 	}
 
+	/**
+	 * AllowedBeforeToday
+	 * @param $value
+	 * @param $parameters
+	 */
+	public function AllowedBeforeToday($value,$parameters){
+
+		if(!isset($value)){
+			return true;
+		}
+
+		$target=date_format(date_create($value),"Y/m/d 00:00:00");
+		$toDay=date_format(date_create("now"),"Y/m/d 00:00:00");
+
+		$toDay=date_format(date_create($toDay),"U");
+		$target=@date_format(date_create($target),"U");
+
+		if($target <= $toDay){
+			return true;
+		}
+
+		return false;
+	}
+
+	/**
+	 * AllowedAfterToday
+	 * @param $value
+	 * @param $parameters
+	 */
+	public function AllowedAfterToday($value,$parameters){
+
+		if(!isset($value)){
+			return true;
+		}
+
+		$target=date_format(date_create($value),"Y/m/d 00:00:00");
+		$toDay=date_format(date_create("now"),"Y/m/d 00:00:00");
+
+		$toDay=date_format(date_create($toDay),"U");
+		$target=@date_format(date_create($target),"U");
+
+		if($target >= $toDay){
+			return true;
+		}
+
+		return false;
+	}
+
 }
