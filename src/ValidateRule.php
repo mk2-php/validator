@@ -1,13 +1,18 @@
 <?php
 
 /**
+ * ===================================================
  * 
- * Mk2 Validator
+ * PHP Framework "Mk2" - Mk2-Validator
+ *
+ * ValidateRule
  * 
- * ValidateRule Class
+ * URL : https://www.mk2-php.com/
  * 
- * Copylight : Nakajima Satoru.
+ * Copylight : Nakajima-Satoru 2021.
+ *           : Sakaguchiya Co. Ltd. (https://www.teastalk.jp/)
  * 
+ * ===================================================
  */
 
 namespace Mk2\Validator;
@@ -16,6 +21,10 @@ class ValidateRule{
 
 	private $_post;
 
+	/**
+	 * __construct
+	 * @param $post
+	 */
 	public function __construct($post){
 		$this->_post=$post;
 	}
